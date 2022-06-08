@@ -1,6 +1,4 @@
-provider "azurerm" {
-  features {}
-}
+
 
 resource "azurerm_resource_group" "example" {
   name     = "${var.prefix}-workshop"
@@ -21,8 +19,8 @@ module "network" {
   }
 
   tags = {
-    environment = "dev"
-    costcenter  = "it"
+    Department = "dev"
+    Billing  = "true"
   }
 
   depends_on = [azurerm_resource_group.example]
